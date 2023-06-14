@@ -8,6 +8,7 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/capabilities/:capability" element={<Capability />} />
+      <Route path='*' element={<PageNotFound/>}>
     </Routes>
   );
 }

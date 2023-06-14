@@ -1,8 +1,7 @@
-import { Flex, Heading, List, ListItem, Text } from '@chakra-ui/react';
+import { Flex, Heading, List, Text } from '@chakra-ui/react';
 import React, { ReactNode, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
-import useNavListItems from '../../../hooks/useNavListItems';
 import APP_CAPABILITIES from '../../../utils/capabilites';
 import CustomListItem from './CustomListItem';
 import DropdownListItem from './DropdownListItem';
