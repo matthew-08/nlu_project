@@ -1,11 +1,12 @@
 import { HTMLInputTypeAttribute } from 'react';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
+import { InputInfo } from '../types';
 
 type Props<FormData extends FieldValues> = {
   inputInfo: {
     placeholder: string;
     fieldName: keyof FormData;
-    inputType?: HTMLInputTypeAttribute;
+    inputInfo: InputInfo;
   }[];
   register: UseFormRegister<FormData>;
   errors: FieldErrors<FormData>;
@@ -19,7 +20,7 @@ const generateFormInputs = <FormData extends FieldValues>(
   return data.inputInfo.map((i) => {
     return {
       fieldName: i.fieldName,
-      inputType: i.inputType,
+      inputInfo: i.inputInfo,
       register,
       isInvalid,
       pHolderTxt: i.placeholder,

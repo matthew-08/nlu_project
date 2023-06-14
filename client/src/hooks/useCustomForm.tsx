@@ -1,17 +1,18 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { HTMLInputTypeAttribute } from 'react';
+import { HTMLInputTypeAttribute, useEffect } from 'react';
 import { ZodSchema } from 'zod';
 import { generateFormInputs } from '../utils/generateFormInputs';
+import { InputInfo } from '../types';
 
-type InputInfo<FormData> = {
+type Input<FormData> = {
   placeholder: string;
   fieldName: keyof FormData;
-  inputType?: HTMLInputTypeAttribute;
+  inputInfo: InputInfo;
 }[];
 
 const useCustomForm = <FormData extends Record<any, any>>(
-  inputInfo: InputInfo<FormData>,
+  inputInfo: Input<FormData>,
   zodSchema: ZodSchema
 ) => {
   const {
@@ -22,8 +23,6 @@ const useCustomForm = <FormData extends Record<any, any>>(
   } = useForm<FormData>({
     resolver: zodResolver(zodSchema),
   });
-
-  console.log(errors);
 
   const fieldHasError = (k: keyof FormData) => k in errors;
   const inputObjects = generateFormInputs<FormData>({

@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/require-default-props */
-import React, { HTMLInputTypeAttribute, useEffect } from 'react';
+import React, { HTMLInputTypeAttribute } from 'react';
 import { FieldValues, UseFormRegister, Path } from 'react-hook-form';
 import {
   FormControl,
   FormErrorMessage,
   Input,
   InputGroup,
-  InputLeftElement,
 } from '@chakra-ui/react';
+import { v4 as uuid } from 'uuid';
 
 type FieldInfo<FormData extends FieldValues> = {
   pHolderTxt: string;
@@ -17,6 +17,8 @@ type FieldInfo<FormData extends FieldValues> = {
   isInvalid: (k: keyof FormData) => boolean;
   errorMsg?: string;
   register: UseFormRegister<FormData>;
+  isSelect?: boolean;
+  selectOptions?: string[];
 };
 
 type Props<FormData extends FieldValues> = {
@@ -29,6 +31,7 @@ export function FormInput<FormData extends FieldValues>({
   const { fieldName, isInvalid, pHolderTxt, register, errorMsg, inputType } =
     fieldInfo;
 
+  console.log(isInvalid(fieldName));
   return (
     <FormControl isInvalid={isInvalid(fieldName)}>
       <InputGroup>
