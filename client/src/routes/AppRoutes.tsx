@@ -1,14 +1,17 @@
 import React from 'react';
 import { Routes, RoutesProps, Route } from 'react-router-dom';
 import Capability from '../pages/Capability';
+import Flavors from '../pages/Flavors';
 import Home from '../pages/Home';
+import PageNotFound from '../pages/PageNotFound';
 
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/capabilities/:capability" element={<Capability />} />
-      <Route path='*' element={<PageNotFound/>}>
+      <Route path="/flavors" element={<Flavors />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 }
