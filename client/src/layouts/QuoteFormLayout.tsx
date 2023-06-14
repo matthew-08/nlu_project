@@ -6,9 +6,11 @@ import QuoteForm from '../components/global/quoteForm/QuoteForm';
 function QuoteFormLayout({ children }: { children: ReactNode }) {
   return (
     <DefaultLayout>
-      {children}
-      <Flex ml="auto">
-        <QuoteForm />
+      <Flex mt="2rem">
+        {children}
+        <Flex ml="auto">
+          <QuoteForm />
+        </Flex>
       </Flex>
     </DefaultLayout>
   );

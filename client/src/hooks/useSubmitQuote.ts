@@ -19,6 +19,9 @@ const useSubmitQuote = () => {
   });
 
   const handleSubmitQuote = async (data: QuoteFormData) => {
+    if (status.complete) {
+      return;
+    }
     setStatus({ ...status, loading: true, idle: false });
     await appFetch({
       method: 'POST',

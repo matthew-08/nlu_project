@@ -1,8 +1,10 @@
 /* eslint-disable react/no-array-index-key */
+import { CheckCircleIcon } from '@chakra-ui/icons';
 import {
   Button,
   Checkbox,
   Flex,
+  Text,
   Heading,
   Input,
   Select,
@@ -97,9 +99,9 @@ function QuoteForm() {
         mt="1rem"
         size="lg"
         isLoading={submitStatus.loading}
-        colorScheme="blue"
+        colorScheme={submitStatus.complete ? 'green' : 'blue'}
       >
-        Submit
+        {submitStatus.complete ? <CheckCircleIcon /> : 'Submit'}
       </Button>
     </Flex>
   );
