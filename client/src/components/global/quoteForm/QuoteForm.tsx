@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import useCustomForm from '../../../hooks/useCustomForm';
+import useSubmitQuote from '../../../hooks/useSubmitQuote';
 import QuoteSchema, { QuoteFormData } from '../../../schemas/quoteSchema';
 import APP_CAPABILITIES from '../../../utils/capabilites';
 import { FormInput } from './FormInput';
@@ -16,7 +17,8 @@ import FormSelect from './FormSelect';
 import FormTexarea from './FormTexarea';
 
 function QuoteForm() {
-  const { handleSubmit, inputObjects, setError } = useCustomForm<QuoteFormData>(
+  const { handleSubmitQuote, submitStatus } = useSubmitQuote();
+  const { handleSubmit, inputObjects } = useCustomForm<QuoteFormData>(
     [
       {
         fieldName: 'name',
@@ -57,7 +59,7 @@ function QuoteForm() {
     ],
     QuoteSchema
   );
-  const temp = (data: any) => console.log(data);
+  const temp = (data: QuoteFormData) => handleSubmitQuote(data);
   return (
     <Flex
       as="form"
@@ -90,7 +92,13 @@ function QuoteForm() {
           return <FormInput fieldInfo={i} key={index} />;
         })}
       </Flex>
-      <Button type="submit" mt="1rem" size="lg" colorScheme="blue">
+      <Button
+        type="submit"
+        mt="1rem"
+        size="lg"
+        isLoading={submitStatus.loading}
+        colorScheme="blue"
+      >
         Submit
       </Button>
     </Flex>

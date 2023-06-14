@@ -16,8 +16,7 @@ const appFetch = async ({ path, method, body }: FetchInput) => {
       headers: { 'Content-Type': 'application/json' },
     }),
     method,
-    credentials: 'include',
-    ...(body && body),
+    ...(body && { body: JSON.stringify(body) }),
   });
 };
 
