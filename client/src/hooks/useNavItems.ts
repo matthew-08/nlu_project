@@ -11,7 +11,7 @@ type ListItem = {
   dropdown: boolean;
   name: string;
   href: `/${string}`;
-  dropdownItems?: readonly string[] | string[];
+  dropdownItems?: DropdownItem[];
 };
 const useNavItems = () => {
   const [listItems, setListItems] = useState<ListItem[]>([
@@ -19,13 +19,18 @@ const useNavItems = () => {
       dropdown: true,
       href: '/capabilities',
       name: 'Capabilities',
-      dropdownItems: APP_CAPABILITIES.map(),
+      dropdownItems: APP_CAPABILITIES.map((item) => {
+        return {
+          name: 'item',
+          href: `/capabilities/${item}`,
+        };
+      }),
     },
     {
       dropdown: true,
       href: '/categories',
       name: 'Flavors',
-      dropdownItems: ['test'],
+      dropdownItems: [],
     },
     {
       dropdown: false,
