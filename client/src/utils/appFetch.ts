@@ -5,7 +5,7 @@ const backendApi = 'http://localhost:3005';
 type Endpoints = 'quotes' | 'categories';
 
 type FetchInput = {
-  path: `/api/${Endpoints}` | `/api/${Endpoints}/`;
+  path: `/api/${Endpoints}` | `/api/${Endpoints}/${string}`;
   method: 'GET' | 'POST';
   body?: Record<any, any>;
 };

@@ -10,7 +10,9 @@ function Flavors() {
   return (
     <QuoteFormLayout>
       <Flex flexDir="column" align="center">
-        <Heading fontSize="4rem">Flavors</Heading>
+        <Heading fontSize="4rem" mr={['0', '0', '0', 'auto']} ml="0.5rem">
+          Flavors
+        </Heading>
         <Flex
           flexWrap="wrap"
           gap="2rem"
@@ -18,10 +20,10 @@ function Flavors() {
           p="1rem"
           overflow="auto"
           align="center"
-          justify="center"
+          justify={['center', 'center', 'flex-start']}
         >
           {categories?.map((c) => {
-            return <CategoryCard name={c.name} key={c.name} />;
+            return <CategoryCard name={c.name} id={c.id} key={c.name} />;
           })}
         </Flex>
       </Flex>

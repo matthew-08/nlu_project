@@ -12,13 +12,13 @@ function Footer() {
       background="white"
       backgroundColor="gray.100"
       mt="auto"
-      px="2rem"
+      px={['0.5rem', '2rem']}
       align="center"
+      py={['0.5rem', '1rem']}
     >
       <CopyrightLogo />
-
       <Flex ml="auto">
-        <AppLogo size="1.5rem" />
+        <AppLogo headingSize={['2rem', '2.5rem']} logoSize={['2rem', '3rem']} />
       </Flex>
     </Flex>
   );
