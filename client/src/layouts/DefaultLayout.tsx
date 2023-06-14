@@ -6,7 +6,7 @@ import Header from '../components/global/header/Header';
 function DefaultLayout({ children }: { children: ReactNode }) {
   return (
     <Flex flexDir="column" minH="100%" background="whiteAlpha.700">
-      <Flex px="3rem" flexDir="column" py="1rem">
+      <Flex px={['1rem', '3rem']} flexDir="column" py="1rem">
         <Header />
         {children}
       </Flex>

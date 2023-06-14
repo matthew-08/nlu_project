@@ -16,7 +16,7 @@ function Navbar() {
       justify="center"
       align="center"
     >
-      <NavListController />
+      {/* <NavListController /> */}
     </Flex>
   );
 }

@@ -27,7 +27,7 @@ body {
 }
 
 body > #root > div {
-  height: 100vh;
+  height: 100%;
 }
 .swiper {
   width: 100%;
@@ -73,4 +73,18 @@ body > #root > div {
 .nav-item:hover::after {
   width: 100%;
   transition: width .4s;
+}
+
+
+.category-card {
+  transition: transform ease-in-out 300ms, box-shadow ease-in 350ms;
+}
+
+.category-card:hover {
+  cursor: pointer;
+  background: #eff1f3;
+  transform: scale(1.04);
+  box-shadow: 5px 4px 0px 1px rgba(46,132,187,0.72);
+  -webkit-box-shadow: 5px 4px 0px 1px rgba(46,132,187,0.72);
+  -moz-box-shadow: 5px 4px 0px 1px rgba(46,132,187,0.72);
 }

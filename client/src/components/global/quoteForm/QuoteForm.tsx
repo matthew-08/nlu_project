@@ -71,6 +71,7 @@ function QuoteForm() {
       flexDir="column"
       onSubmit={handleSubmit(temp)}
       minW="350px"
+      maxH="500px"
     >
       <Heading m="auto" mb="1rem">
         Get a quote
