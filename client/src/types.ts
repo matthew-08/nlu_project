@@ -33,3 +33,9 @@ interface Checkbox {
 }
 
 export type InputInfo = TextInput | Checkbox | TextArea | SelectInput;
+
+export type DropdownItem = {
+  id?: number;
+  href: string;
+  name: string;
+};

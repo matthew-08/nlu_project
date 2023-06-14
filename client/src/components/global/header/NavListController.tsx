@@ -2,6 +2,7 @@ import { Flex, Heading, List, Text } from '@chakra-ui/react';
 import React, { ReactNode, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
+import useNavItems from '../../../hooks/useNavItems';
 import APP_CAPABILITIES from '../../../utils/capabilites';
 import CustomListItem from './CustomListItem';
 import DropdownListItem from './DropdownListItem';
@@ -15,30 +16,7 @@ type ListItem = {
 
 function NavListController() {
   const navigate = useNavigate();
-  const [listItems, setListItems] = useState<ListItem[]>([
-    {
-      dropdown: true,
-      href: '/capabilities',
-      name: 'Capabilities',
-      dropdownItems: APP_CAPABILITIES,
-    },
-    {
-      dropdown: true,
-      href: '/categories',
-      name: 'Flavors',
-      dropdownItems: ['test'],
-    },
-    {
-      dropdown: false,
-      href: '/about',
-      name: 'About us',
-    },
-    {
-      dropdown: false,
-      href: '/contact',
-      name: 'Contact',
-    },
-  ]);
+  const { listItems } = useNavItems();
   return (
     <Flex gap="8rem">
       {listItems.map((item, index) => {

@@ -1,11 +1,7 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import APP_CAPABILITIES from '../utils/capabilites';
-
-type DropdownItem = {
-  id?: number;
-  href: string;
-  name: string;
-};
+import { DropdownItem } from '../types';
 
 type ListItem = {
   dropdown: boolean;
@@ -43,4 +39,7 @@ const useNavItems = () => {
       name: 'Contact',
     },
   ]);
+  return { listItems };
 };
+
+export default useNavItems;
