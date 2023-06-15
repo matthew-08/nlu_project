@@ -1,6 +1,4 @@
-import { Flex, Box, Text } from '@chakra-ui/react';
-import React from 'react';
-import { MdCopyright } from 'react-icons/md';
+import { Flex } from '@chakra-ui/react';
 import AppLogo from '../../appLogo/AppLogo';
 import CopyrightLogo from '../copyrightLogo/CopyrightLogo';
 

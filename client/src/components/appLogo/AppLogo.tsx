@@ -1,4 +1,3 @@
-import React from 'react';
 import { Flex, Heading } from '@chakra-ui/react';
 import { MdFoodBank } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';

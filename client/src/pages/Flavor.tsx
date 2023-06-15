@@ -2,14 +2,12 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-  Text,
   Flex,
   Heading,
   UnorderedList,
   ListItem,
   useMediaQuery,
 } from '@chakra-ui/react';
-import DefaultLayout from '../layouts/DefaultLayout';
 import useFlavorCategory from '../hooks/useFlavorCategory';
 import QuoteFormLayout from '../layouts/QuoteFormLayout';
 

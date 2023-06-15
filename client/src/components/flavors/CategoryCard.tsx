@@ -1,5 +1,4 @@
 import { Flex, Text } from '@chakra-ui/react';
-import React from 'react';
 import { MdEmojiFoodBeverage } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import formatName from '../../utils/formatName';
