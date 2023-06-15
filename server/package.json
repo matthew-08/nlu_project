@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "npx ts-node-dev --respawn --transpile-only ./src/index.ts "
+    "dev": "npx ts-node-dev --respawn --transpile-only ./src/index.ts",
+    "build": "tsc --build tsconfig.json ",
+    "start": "node dist"
   },
   "author": "",
   "license": "ISC",
