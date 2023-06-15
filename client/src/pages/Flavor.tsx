@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Text, Flex, Heading, UnorderedList, ListItem } from '@chakra-ui/react';
 import DefaultLayout from '../layouts/DefaultLayout';
@@ -7,9 +8,15 @@ import QuoteFormLayout from '../layouts/QuoteFormLayout';
 
 function Flavor() {
   const { state } = useLocation();
-  const { flavors } = useFlavorCategory({
+  console.log(state);
+  const { flavors, handleFetchFlavors } = useFlavorCategory({
     id: state.id || '',
   });
+  useEffect(() => {
+    if (state.id) {
+      handleFetchFlavors(state.id);
+    }
+  }, [state]);
   return (
     <QuoteFormLayout>
       <Flex flexDir="column" width="100%">

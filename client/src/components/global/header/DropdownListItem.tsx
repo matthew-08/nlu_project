@@ -28,7 +28,6 @@ function DropdownListItem({ name, dropdownItems }: DropDownListItemProps) {
   const hoverRef = useRef(null);
   const navigate = useNavigate();
   const { isOpen } = useDropdownHover(hoverRef);
-  console.log(dropdownItems);
   return (
     <Flex align="center" ref={hoverRef} position="relative">
       <CustomListItem name={name} href={`/${name}`} />
@@ -52,7 +51,14 @@ function DropdownListItem({ name, dropdownItems }: DropDownListItemProps) {
                 mr="2rem"
                 key={uuid()}
                 cursor="pointer"
-                onClick={() => navigate(c.href)}
+                onClick={() =>
+                  navigate(c.href, {
+                    state: {
+                      id: c.id,
+                      name: c.name,
+                    },
+                  })
+                }
               >
                 {c.name}
               </Text>

@@ -3,6 +3,7 @@ import APP_CAPABILITIES from '../utils/capabilites';
 import { DropdownItem } from '../types';
 import capitalize from '../utils/capitalize';
 import appFetch from '../utils/appFetch';
+import formatName from '../utils/formatName';
 
 type ListItem = {
   dropdown: boolean;
@@ -47,12 +48,18 @@ const useNavItems = () => {
     }).then((r) => r.json())) as {
       id: number;
       name: string;
-    };
+    }[];
     const updatedState = listItems.map((i) => {
       if (i.name === 'Flavors') {
         return {
           ...i,
-          dropdownItems: cats,
+          dropdownItems: cats.map((c) => {
+            return {
+              href: `/flavors/${formatName(c.name)}`,
+              id: c.id,
+              name: c.name,
+            };
+          }),
         };
       }
       return i;

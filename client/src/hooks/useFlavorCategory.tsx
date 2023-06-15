@@ -10,8 +10,7 @@ type Flavors = {
 const useFlavorCategory = ({ id }: { id: number }) => {
   const [flavors, setFlavors] = useState<Flavors[]>();
 
-  const handleFetchFlavors = async () => {
-    console.log(id);
+  const handleFetchFlavors = async (fId: number) => {
     await appFetch({
       method: 'GET',
       path: `/api/categories/${id}/flavors`,
@@ -20,11 +19,11 @@ const useFlavorCategory = ({ id }: { id: number }) => {
       .then((r) => setFlavors([...r]));
   };
   useEffect(() => {
-    handleFetchFlavors();
+    handleFetchFlavors(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return { flavors };
+  return { flavors, handleFetchFlavors };
 };
 
 export default useFlavorCategory;
