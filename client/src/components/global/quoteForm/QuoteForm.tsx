@@ -16,7 +16,7 @@ import QuoteSchema, { QuoteFormData } from '../../../schemas/quoteSchema';
 import APP_CAPABILITIES from '../../../utils/capabilites';
 import { FormInput } from './FormInput';
 import FormSelect from './FormSelect';
-import FormTexarea from './FormTexarea';
+import FormTextarea from './FormTextarea';
 
 function QuoteForm() {
   const { handleSubmitQuote, submitStatus } = useSubmitQuote();
@@ -83,7 +83,7 @@ function QuoteForm() {
             return <FormSelect fieldInfo={i} key={i.fieldName} />;
           }
           if (inputType === 'textarea') {
-            return <FormTexarea fieldInfo={i} key={i.fieldName} />;
+            return <FormTextarea fieldInfo={i} key={i.fieldName} />;
           }
           if (inputType === 'checkbox') {
             return (

@@ -13,7 +13,7 @@ type Props<T extends FieldValues> = {
   fieldInfo: FieldInfo<T>;
 };
 
-function FormTexarea<FormData extends FieldValues>({
+function FormTextarea<FormData extends FieldValues>({
   fieldInfo,
 }: Props<FormData>) {
   const {
@@ -40,4 +40,4 @@ function FormTexarea<FormData extends FieldValues>({
   );
 }
 
-export default FormTexarea;
+export default FormTextarea;

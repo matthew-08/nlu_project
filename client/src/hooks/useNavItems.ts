@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { list } from '@chakra-ui/react';
 import APP_CAPABILITIES from '../utils/capabilites';
 import { DropdownItem } from '../types';
 import capitalize from '../utils/capitalize';
