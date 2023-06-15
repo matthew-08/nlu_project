@@ -50,3 +50,29 @@ Seed the database:
 npm run seed
 ```
 
+Start the development server:
+```
+npm run dev
+```
+
+The server will be listening on http://localhost:3000 by default.
+
+#### Frontend:
+
+Install dependencies
+
+```
+npm install
+```
+
+Start the development sever:
+
+```
+npm run dev
+```
+
+The backend API URL is set to http://localhost:3000 by default but if you'd like to change it you can provide a value for the following environment value:
+
+```
+VITE_API_URL
+```
