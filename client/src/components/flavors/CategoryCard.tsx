@@ -2,6 +2,7 @@ import { Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 import { MdEmojiFoodBeverage } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
+import formatName from '../../utils/formatName';
 
 type Props = {
   name: string;
@@ -19,7 +20,7 @@ function CategoryCard({ name, id }: Props) {
       align="center"
       className="category-card"
       onClick={() =>
-        navigate(`/flavors/${name.replace(/\s+/g, '-').toLowerCase()}`, {
+        navigate(`/flavors/${formatName(name)}`, {
           state: { id, name },
         })
       }

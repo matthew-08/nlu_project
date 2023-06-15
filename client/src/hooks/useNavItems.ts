@@ -25,7 +25,7 @@ const useNavItems = () => {
     },
     {
       dropdown: true,
-      href: '/categories',
+      href: '/flavors',
       name: 'Flavors',
       dropdownItems: [],
     },
@@ -41,10 +41,13 @@ const useNavItems = () => {
     },
   ]);
   const fetchCategories = async () => {
-    const cats = await appFetch({
+    const cats = (await appFetch({
       method: 'GET',
       path: '/api/categories',
-    }).then((r) => r.json());
+    }).then((r) => r.json())) as {
+      id: number;
+      name: string;
+    };
     const updatedState = listItems.map((i) => {
       if (i.name === 'Flavors') {
         return {

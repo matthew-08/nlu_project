@@ -1,14 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import { CheckCircleIcon } from '@chakra-ui/icons';
-import {
-  Button,
-  Checkbox,
-  Flex,
-  Text,
-  Heading,
-  Input,
-  Select,
-} from '@chakra-ui/react';
+import { Button, Checkbox, Flex, Heading } from '@chakra-ui/react';
 import React from 'react';
 import useCustomForm from '../../../hooks/useCustomForm';
 import useSubmitQuote from '../../../hooks/useSubmitQuote';
