@@ -51,6 +51,9 @@ function DropdownListItem({ name, dropdownItems }: DropDownListItemProps) {
                 mr="2rem"
                 key={uuid()}
                 cursor="pointer"
+                _hover={{
+                  color: '#007aff',
+                }}
                 onClick={() =>
                   navigate(c.href, {
                     state: {

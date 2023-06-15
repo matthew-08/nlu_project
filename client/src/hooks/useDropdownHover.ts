@@ -6,7 +6,6 @@ import { useEventListener } from 'usehooks-ts';
 export function useDropdownHover<T extends HTMLElement = HTMLElement>(
   elementRef: RefObject<T>
 ) {
-  const [value, setValue] = useState<boolean>(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleMouseEnter = () => onOpen();

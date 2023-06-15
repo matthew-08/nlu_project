@@ -8,7 +8,6 @@ import QuoteFormLayout from '../layouts/QuoteFormLayout';
 
 function Flavor() {
   const { state } = useLocation();
-  console.log(state);
   const { flavors, handleFetchFlavors } = useFlavorCategory({
     id: state.id || '',
   });
