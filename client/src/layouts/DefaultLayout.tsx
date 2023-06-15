@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/react';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import Footer from '../components/global/footer/Footer';
 import Header from '../components/global/header/Header';
 

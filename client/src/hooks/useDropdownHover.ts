@@ -1,5 +1,5 @@
 import { useDisclosure } from '@chakra-ui/react';
-import { RefObject, useState } from 'react';
+import { RefObject } from 'react';
 
 import { useEventListener } from 'usehooks-ts';
 

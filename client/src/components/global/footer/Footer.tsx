@@ -6,6 +6,7 @@ function Footer() {
   return (
     <Flex
       width="100%"
+      as="footer"
       minH="50px"
       background="white"
       backgroundColor="gray.100"

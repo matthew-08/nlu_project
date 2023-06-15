@@ -9,7 +9,7 @@ const postQuoteHandler = async (
     const postQuoteInput = req.body
     await postQuoteService(postQuoteInput)
     return res.status(200).send({
-        message: 'quote sucessfully posted',
+        message: 'quote posted',
     })
 }
 

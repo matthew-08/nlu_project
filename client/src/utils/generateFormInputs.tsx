@@ -1,4 +1,3 @@
-import { HTMLInputTypeAttribute } from 'react';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 import { InputInfo } from '../types';
 

@@ -1,5 +1,3 @@
-import { CardBody } from '@chakra-ui/react';
-
 const backendApi = 'http://localhost:3005';
 
 type Endpoints = 'quotes' | 'categories';

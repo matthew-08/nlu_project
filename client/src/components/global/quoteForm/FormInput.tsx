@@ -31,7 +31,6 @@ export function FormInput<FormData extends FieldValues>({
   const { fieldName, isInvalid, pHolderTxt, register, errorMsg, inputType } =
     fieldInfo;
 
-  console.log(isInvalid(fieldName));
   return (
     <FormControl isInvalid={isInvalid(fieldName)}>
       <InputGroup>

@@ -1,5 +1,5 @@
 import { Flex, useMediaQuery } from '@chakra-ui/react';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import DefaultLayout from './DefaultLayout';
 import QuoteForm from '../components/global/quoteForm/QuoteForm';
 

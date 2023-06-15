@@ -2,9 +2,9 @@ import { readFile } from 'fs/promises'
 import {
     getCategoryIdService,
     insertCategoryService,
-} from '../service/category.service'
-import { insertFlavorService } from '../service/flavor.service'
-import { formatCsv } from './utils/formatCsv'
+} from '../../service/category.service'
+import { insertFlavorService } from '../../service/flavor.service'
+import { formatCsv } from '../utils/formatCsv'
 const seedDb = async () => {
     const catAndFlavorTuple = await readFile('./src/db/flavors.csv').then(
         (r) => {
@@ -20,6 +20,7 @@ const seedDb = async () => {
         catAndFlavorTuple.map(async ([category]) => {
             if (!categories[category]) {
                 categories[category] = 1
+                console.log(`category - inserting ${category}`)
                 return insertCategoryService(category)
             }
         })
@@ -31,9 +32,11 @@ const seedDb = async () => {
                 return
             }
             const catId = await getCategoryIdService(category)
+            console.log(`flavor - inserting ${flavor}`)
             return await insertFlavorService(flavor, catId)
         })
     )
+    console.log('Database seed complete')
 }
 
 seedDb()

@@ -1,5 +1,4 @@
 import { Heading, Flex, Text, useMediaQuery } from '@chakra-ui/react';
-import React from 'react';
 import DefaultLayout from '../layouts/DefaultLayout';
 import AppSlider from '../components/home/Slider/AppSlider';
 import QuoteForm from '../components/global/quoteForm/QuoteForm';
@@ -9,11 +8,7 @@ export default function Home() {
   return (
     <DefaultLayout>
       <AppSlider />
-      <Flex
-        as="section"
-        mt="3rem"
-        flexDir={isSmallerThan900 ? 'column' : 'row'}
-      >
+      <Flex as="main" mt="3rem" flexDir={isSmallerThan900 ? 'column' : 'row'}>
         <Flex flexDir="column" maxW="100%">
           <Heading fontSize={['3.2rem', '3.5rem']} mb="2rem">
             Design. Manufacture. Deliver.

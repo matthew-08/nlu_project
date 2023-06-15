@@ -1,5 +1,4 @@
-import React from 'react';
-import { Routes, RoutesProps, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Capability from '../pages/Capability';
 import Flavor from '../pages/Flavor';
 import Flavors from '../pages/Flavors';

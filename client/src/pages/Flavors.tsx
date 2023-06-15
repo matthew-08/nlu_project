@@ -1,6 +1,4 @@
-import React from 'react';
 import { Heading, Flex } from '@chakra-ui/react';
-import DefaultLayout from '../layouts/DefaultLayout';
 import QuoteFormLayout from '../layouts/QuoteFormLayout';
 import useFlavorCategories from '../hooks/useFlavorCategories';
 import CategoryCard from '../components/flavors/CategoryCard';
@@ -9,7 +7,7 @@ function Flavors() {
   const { categories } = useFlavorCategories();
   return (
     <QuoteFormLayout>
-      <Flex flexDir="column" align="center">
+      <Flex flexDir="column" align="center" as="main">
         <Heading fontSize="4rem" mr={['0', '0', '0', 'auto']} ml="0.5rem">
           Flavors
         </Heading>
