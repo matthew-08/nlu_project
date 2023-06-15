@@ -11,10 +11,10 @@ const makeApp = () => {
     const pgClient = createDb()
     const server = http.createServer(app)
 
-    server.listen(appEnv.appPort, () => {
-        console.log(`Server is listening on ${appEnv.appPort}`)
+    const port = Number(process.env.PORT) || 3000
+    server.listen(port, '0.0.0.0', () => {
+        console.log(`Server listening on ${port}`)
     })
-
     routes(app)
 
     return {
