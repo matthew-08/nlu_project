@@ -5,7 +5,7 @@ import capitalize from '../utils/capitalize';
 import appFetch from '../utils/appFetch';
 import formatName from '../utils/formatName';
 
-type ListItem = {
+export type ListItem = {
   dropdown: boolean;
   name: string;
   href: `/${string}`;
