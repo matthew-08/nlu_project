@@ -1,6 +1,5 @@
 import { ArrowDownIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import {
-  ListItem,
   Box,
   Grid,
   Accordion,
@@ -23,6 +22,8 @@ import CustomListItem from './CustomListItem';
 // eslint-disable-next-line import/no-named-as-default
 import useDropdownHover from '../../../../hooks/useDropdownHover';
 import { DropdownItem } from '../../../../types';
+import { ListItem } from '../../../../hooks/useNavItems';
+import DropdownItemText from './DropdownItemText';
 
 type DropDownListItemProps = {
   name: string;
@@ -51,25 +52,14 @@ function DropdownListItem({
         <AccordionPanel pb={4}>
           {dropdownItems.map((c) => {
             return (
-              <Text
-                fontSize="1.4rem"
-                mr="2rem"
+              <DropdownItemText
                 key={uuid()}
-                cursor="pointer"
-                _hover={{
-                  color: '#007aff',
+                itemData={{
+                  href: c.href,
+                  id: c.id,
+                  name: c.name,
                 }}
-                onClick={() =>
-                  navigate(c.href, {
-                    state: {
-                      id: c.id,
-                      name: c.name,
-                    },
-                  })
-                }
-              >
-                {c.name}
-              </Text>
+              />
             );
           })}
         </AccordionPanel>
