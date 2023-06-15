@@ -1,4 +1,4 @@
-import { ArrowDownIcon, ChevronDownIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
   Box,
   Grid,
@@ -7,17 +7,10 @@ import {
   AccordionButton,
   AccordionIcon,
   AccordionPanel,
-  ListIcon,
   Flex,
-  Text,
-  Menu,
-  MenuItem,
-  GridItem,
-  SimpleGrid,
 } from '@chakra-ui/react';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { v4 as uuid } from 'uuid';
-import { useNavigate } from 'react-router-dom';
 import CustomListItem from './CustomListItem';
 // eslint-disable-next-line import/no-named-as-default
 import useDropdownHover from '../../../../hooks/useDropdownHover';

@@ -1,5 +1,4 @@
 import { Flex } from '@chakra-ui/react';
-import React from 'react';
 import AppLogo from '../../appLogo/AppLogo';
 import Navbar from './Navbar/Navbar';
 

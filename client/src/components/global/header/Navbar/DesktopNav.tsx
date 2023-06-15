@@ -1,4 +1,3 @@
-import React from 'react';
 import { v4 as uuid } from 'uuid';
 import { Flex } from '@chakra-ui/react';
 import { ListItem } from '../../../../hooks/useNavItems';

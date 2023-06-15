@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Text } from '@chakra-ui/react';
 import { v4 as uuid } from 'uuid';

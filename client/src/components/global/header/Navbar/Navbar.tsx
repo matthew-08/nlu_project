@@ -1,5 +1,4 @@
-import React from 'react';
-import { Flex, List, ListItem } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import NavListController from './NavListController';
 
 function Navbar() {
