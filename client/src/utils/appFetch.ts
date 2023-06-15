@@ -1,4 +1,4 @@
-const backendApi = 'http://localhost:3005';
+const backendApi = import.meta.env.VITE_API_URL || 'http://localhost:3005';
 
 type Endpoints = 'quotes' | 'categories';
 
