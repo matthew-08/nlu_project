@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import APP_CAPABILITIES from '../utils/capabilites';
 import { DropdownItem } from '../types';
+import capitalize from '../utils/capitalize';
 
 type ListItem = {
   dropdown: boolean;
@@ -17,7 +18,7 @@ const useNavItems = () => {
       name: 'Capabilities',
       dropdownItems: APP_CAPABILITIES.map((item) => {
         return {
-          name: 'item',
+          name: capitalize(item),
           href: `/capabilities/${item}`,
         };
       }),

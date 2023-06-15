@@ -24,7 +24,7 @@ function NavListController() {
           return (
             <DropdownListItem
               key={uuid()}
-              dropdownContent={item.dropdownItems}
+              dropdownItems={item.dropdownItems}
               name={item.name}
             />
           );

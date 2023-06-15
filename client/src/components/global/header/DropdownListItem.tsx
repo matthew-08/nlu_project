@@ -10,17 +10,20 @@ import {
 } from '@chakra-ui/react';
 import React, { useRef } from 'react';
 import { v4 as uuid } from 'uuid';
+import { useNavigate } from 'react-router-dom';
 import CustomListItem from './CustomListItem';
 // eslint-disable-next-line import/no-named-as-default
 import useDropdownHover from '../../../hooks/useDropdownHover';
+import { DropdownItem } from '../../../types';
 
 type DropDownListItemProps = {
   name: string;
-  dropdownContent: string[] | readonly string[];
+  dropdownItems: DropdownItem[];
 };
 
-function DropdownListItem({ name, dropdownContent }: DropDownListItemProps) {
+function DropdownListItem({ name, dropdownItems }: DropDownListItemProps) {
   const hoverRef = useRef(null);
+  const navigate = useNavigate();
   const { isOpen } = useDropdownHover(hoverRef);
   return (
     <Flex align="center" ref={hoverRef} position="relative">
@@ -35,11 +38,17 @@ function DropdownListItem({ name, dropdownContent }: DropDownListItemProps) {
           flexDir="column"
           zIndex="200"
           borderRadius="10px"
+          gap="1rem"
         >
-          {dropdownContent.map((c) => {
+          {dropdownItems.map((c) => {
             return (
-              <Text fontSize="1.4rem" key={uuid()}>
-                {c}
+              <Text
+                fontSize="1.4rem"
+                key={uuid()}
+                cursor="pointer"
+                onClick={() => navigate(c.href)}
+              >
+                {c.name}
               </Text>
             );
           })}
