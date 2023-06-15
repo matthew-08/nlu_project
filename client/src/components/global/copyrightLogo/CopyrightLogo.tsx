@@ -8,10 +8,10 @@ function CopyrightLogo() {
   return (
     <Flex align="center">
       <Text mr="0.2rem" fontSize={fontSize}>
-        Copyright{' '}
+        Copyright
       </Text>
       <MdCopyright />
-      <Text ml="0.2rem" fontSize={fontSize}>
+      <Text ml="0.2rem" fontSize={fontSize} mt="0.1rem">
         {currentYear}. All rights reserved.
       </Text>
     </Flex>

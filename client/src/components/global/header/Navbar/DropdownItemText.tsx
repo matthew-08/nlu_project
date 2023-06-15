@@ -15,7 +15,7 @@ function DropdownItemText({ itemData }: Props) {
   const navigate = useNavigate();
   return (
     <Text
-      fontSize="1.4rem"
+      fontSize={['1.1rem', '1.2rem', '1.2rem', '1.5rem']}
       mr="2rem"
       key={uuid()}
       cursor="pointer"
@@ -30,7 +30,9 @@ function DropdownItemText({ itemData }: Props) {
           },
         })
       }
-    />
+    >
+      {itemData.name}
+    </Text>
   );
 }
 export default DropdownItemText;

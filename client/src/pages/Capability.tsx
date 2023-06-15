@@ -8,7 +8,7 @@ function Capability() {
   return (
     <DefaultLayout>
       <Flex m="auto" flexDir="column" align="center">
-        <Text fontSize="3rem" my="2rem">
+        <Text fontSize={['2rem', '2.2rem', '3rem']} my="2rem">
           Capabilities/{capability}
         </Text>
         <ReturnHomeBtn />

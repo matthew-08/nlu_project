@@ -37,18 +37,16 @@ function DropdownListItem({
   isMobileView,
 }: DropDownListItemProps) {
   const hoverRef = useRef(null);
-  const navigate = useNavigate();
   const { isOpen } = useDropdownHover(hoverRef);
   return isMobileView ? (
     <Accordion allowToggle borderStyle="none">
-      <AccordionItem>
-        <AccordionButton border="none" fontSize="1.1rem" fontWeight="bold">
+      <AccordionItem border="none">
+        <AccordionButton fontSize="1.1rem" fontWeight="bold">
           <Box textAlign="left" pl="0.5rem">
             {name}
           </Box>
           <AccordionIcon />
         </AccordionButton>
-
         <AccordionPanel pb={4}>
           {dropdownItems.map((c) => {
             return (
@@ -83,25 +81,14 @@ function DropdownListItem({
         >
           {dropdownItems.map((c) => {
             return (
-              <Text
-                fontSize="1.4rem"
-                mr="2rem"
+              <DropdownItemText
                 key={uuid()}
-                cursor="pointer"
-                _hover={{
-                  color: '#007aff',
+                itemData={{
+                  href: c.href,
+                  id: c.id,
+                  name: c.name,
                 }}
-                onClick={() =>
-                  navigate(c.href, {
-                    state: {
-                      id: c.id,
-                      name: c.name,
-                    },
-                  })
-                }
-              >
-                {c.name}
-              </Text>
+              />
             );
           })}
         </Flex>
